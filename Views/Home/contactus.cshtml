@@ -1,0 +1,134 @@
+﻿@{
+    //ViewBag.Title = "contactus";
+    ViewBag.Title = "Contact JOGI SafeTech Pvt. Ltd. | Safety Consulting in Surat, Gujarat";
+    ViewBag.Keywords = "Contact JOGI SafeTech, Safety Consultants Gujarat, Safety Services Surat, Risk Assessment Contact, Process Hazard Analysis Gujarat, Contact Safety Experts";
+    ViewBag.Description = "Get in touch with JOGI SafeTech Pvt. Ltd. for expert safety consulting and risk management services in Surat, Gujarat. Reach out for inquiries about Process Hazard Analysis, Safety Audits, Fire Safety, and more. Our team is here to support your safety and compliance needs.'";
+}
+
+<!--contact-us-->
+<div class="page-slider contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-heading">
+                    <h2>Contact Us</h2>
+                    @* <ul class="list-inline">
+                    <li><i class="fa fa-home "></i><a>Home</a><span>/</span></li>
+                    <li><a class="active">Contact Us</a></li>
+                    </ul> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contact-main section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-10">
+                <div class="contact-message">
+                    <div class="section-title">
+                        <h4>HAVE SOME QUESTIONS?</h4>
+                        <h2 class="title">Contact <span>JOGI</span></h2>
+                    </div>
+                    <p>We're here to help and answer any question you might have.  We look forward to hearing from you.</p>
+                    
+{
+                    <form id="formvalidationcontact" class="contact-form" method="post">
+                        <label>
+                            <i class="fas fa-user-tie"></i>
+                            <span class="ttm-form-control"><input type="text" class="text-input" name="iname" id="txtiname" placeholder="Name"></span>
+                        </label>
+                        <label>
+                            <i class="fas fa-envelope-open-text"></i>
+                            <span class="ttm-form-control"><input class="text-input" name="emailid" id="txtemailid" type="email" value="" placeholder="Work Email-ID"></span>
+                        </label>
+                        <label>
+                            <i class="fas fa-phone-alt"></i>
+                            <span class="ttm-form-control"><input class="text-input" name="mobile" id="txtmobilenum" maxlength="10" onKeyPress="return onKeyValidate(event,numeric);" type="text" value="" placeholder="Your Number"></span>
+                        </label>
+                        <label>
+                            <i class="fas fa-comment-dots"></i>
+                            <span class="ttm-form-control"><textarea class="text-area" name="message" id="txtmessage" placeholder="Your Message"></textarea></span>
+                        </label>
+                    </form>
+                    <a class="btn btn-sm red" onclick="AddContact();">Submit Now</a>
+                    <div class="contact-office">
+                        <h2>Drop into our office</h2>
+                        <div class="contact-office-inner">
+                            <div class="office-icon">
+                                <img src="~/images/icons/phonecall.png" alt="Contact Number" class="img-fluid" />
+                            </div>
+                            <div class="office-desc">
+                                <h5>Phone</h5>
+                                <a href="tel:+917048840302" translate="no">+91 70488 40302</a>
+                            </div>
+                        </div>
+                        <div class="contact-office-inner">
+                            <div class="office-icon">
+                                <img src="~/images/icons/email.png" alt="Email" class="img-fluid" />
+                            </div>
+                            <div class="office-desc">
+                                <h5>Email</h5>
+                                <a href="mailto:audit@jogisafetech.com" translate="no">audit@jogisafetech.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-office-inner">
+                            <div class="office-icon">
+                                <img src="~/images/icons/location.png" alt="Location" class="img-fluid" />
+                            </div>
+                            <div class="office-desc">
+                                <h5>Location</h5>
+                                <p translate="no">
+                                    JOGI SAFETECH PVT. LTD. <br /> A-701/702, Shriji Arcade,
+                                    Behind Bhulka Bhavan School,
+                                    Anand Mahal Road, Adajan,
+                                    Surat, Gujarat - 395009
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rounded-social-buttons text-center">
+                            <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="social-button linkedin" href="https://www.linkedin.com/company/jogisafetechpvtltd/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a class="social-button youtube" href="https://www.youtube.com/channel/UCzoA-R7OGOw1fNx03v2vTfA" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a class="social-button Google" href="http://search.google.com/local/writereview?placeid=ChIJSerqHyVM4DsRqVcOLuHogbA" target="_blank"><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* <div class="col-lg-3 align-self-center" data-aos="fade-left">
+                
+            </div> *@
+        </div>
+    </div>
+</div>
+
+<div class="contact-map" data-aos="fade-up">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d929.9915092628695!2d72.7988164!3d21.1935081!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04c251feaea49%3A0xb081e8e12e0e57a9!2sJOGI%20SafeTech%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1571646968283!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+
+@* <script>
+
+    function AddContact() {
+
+        var objSendData = {
+            iname: $("#txtiname").val().trim(),
+            emailid: $("#txtemailid").val().trim(),
+            mobile: $("#txtmobilenum").val().trim(),
+            message: $("#txtmessage").val().trim(),
+        };
+
+        $.ajax({
+            url: "/Contact/AddContact",
+            type: "POST",
+            data: objSendData,
+            success: function (e) {
+                
+            },
+            error: function (response) {
+                
+            }
+        });
+
+    }
+        
+</script> *@

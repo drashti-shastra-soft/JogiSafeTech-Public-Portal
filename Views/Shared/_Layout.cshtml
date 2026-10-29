@@ -1,0 +1,791 @@
+﻿@{
+    var canonicalUrl = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character Set -->
+    <meta charset="utf-8" />
+
+    <!-- Title and SEO Meta Tags -->
+    <title>@ViewData["Title"]</title>
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="https://jogisafetech.com/images/jogilogo.png" />
+    <meta property="og:url" content="https://jogisafetech.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@Html.Raw(canonicalUrl)" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/myfavicon.ico" />
+
+    <!-- CSS Files -->
+    <link href="~/css/home/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/home/style.css" rel="stylesheet" />
+    <link href="~/css/home/responsive.css" rel="stylesheet" />
+    <link href="~/css/home/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/home/slick.css" rel="stylesheet" />
+    <link href="~/css/home/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/css/home/glightbox.min.css" rel="stylesheet" />
+    <link href="~/css/home/font.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "LocalBusiness",
+          "name": "Jogi Safetech PVT. LTD",
+          "image": "https://jogisafetech.com/images/jogilogo.png",
+          "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "A-701/702, Shriji Arcade, Behind Bhulka Bhavan School, Anand Mahal Road",
+            "addressLocality": "Adajan, Surat",
+            "addressRegion": "Gujarat",
+            "postalCode": "395009",
+            "addressCountry": "IN"
+          },
+          "telephone": "+91 70488 40302",
+                "openingHours": [
+          "Mo-Fr 09:00-18:00",
+          "Sa 09:00-15:30"
+        ],
+          "url": "https://jogisafetech.com/",
+              "sameAs": [
+        "https://www.facebook.com/JOGISafeTechPvtLtd/",
+        "https://www.linkedin.com/company/jogisafetechpvtltd/"
+            }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VJLS9MY3C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9VJLS9MY3C');
+    </script>
+</head>
+
+<body>
+    <div class="navbar-main" id="navbar">
+        <div class="header-top_area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="short_contact_list">
+                            <ul>
+                                <li>
+                                    <a href="mailto:audit@jogisafetech.com" translate="no"><i class="fa fa-envelope"></i>audit@jogisafetech.com</a>
+                                </li>
+                                <li>
+                                    <a href="tel:+917048840302" translate="no"> <i class="fas fa-phone-alt"></i>+91 70488 40302</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="justify-content-end header_right">
+                            <div class="social_media_links">
+                                <a target="_blank" href="https://www.facebook.com/JOGISafeTechPvtLtd/">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a target="_blank" href="https://www.linkedin.com/company/13301073/admin/">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCzoA-R7OGOw1fNx03v2vTfA">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a target="_blank" href="http://search.google.com/local/writereview?placeid=ChIJSerqHyVM4DsRqVcOLuHogbA">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            <div id="google_translate_element"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--header-->
+        <header class="navbar navbar-expand-lg">
+            <div class="container-fluid pl-0">
+                <a href="@Url.Action("Index","Home")" class="logo">
+                    <img src="~/images/jogilogo.png" alt="Jogisafetech Logo" class="img-fluid" width="141" height="80" />
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Home")">Home</a></li>
+
+                        <li class="nav-item dropdown dropdownmenu">
+                            <a class="nav-link dropbutton" href="javascript:void(0);" id="navbardrop" data-toggle="dropdown">
+                                ABOUT US  <span class="dropdown-toggle"></span>
+                            </a>
+                            <div class="dropdown-menu dropdownmenu-content">
+                                <div class="menu1 d-sm-flex d-block">
+                                    <div class="manu-left mr-3">
+                                        <a class="dropdown-item" href="@Url.Content("~/Home/aboutus")"><i class="fa fa-angle-left"></i>About JOGI</a>
+                                        <a class="dropdown-item" href="@Url.Content("~/Home/patrons")"><i class="fa fa-angle-left"></i>Partners & Clients</a>
+                                        <a class="dropdown-item" href="@Url.Content("~/Home/certification")"><i class="fa fa-angle-left"></i>Certifications & Accreditations</a>
+                                        <a class="dropdown-item" href="@Url.Content("~/Home/testimonials")"><i class="fa fa-angle-left"></i>Hear from Our Clients</a>
+                                        <a class="dropdown-item" href="@Url.Content("~/Home/contactus")"><i class="fa fa-angle-left"></i>Contact us</a>
+                                    </div>
+                                    @*  <div class="menu-right">
+                                    <a class="dropdown-item" href="@Url.Content("~/Home/career")"><i class="fa fa-angle-left"></i>Careers</a>
+                                    <a class="dropdown-item" href="@Url.Content("~/Home/testimonial")"><i class="fa fa-angle-left"></i>Testimonials</a>
+                                    <a class="dropdown-item" href="@Url.Content("~/Home/contactus")"><i class="fa fa-angle-left"></i>Contact Us</a>
+                                    </div> *@
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown dropdownmenu mega-dropdown">
+                            <a class="nav-link dropbutton" href="#" onclick="btnToggle()" data-toggle="dropdown">
+                                SERVICES <span class="dropdown-toggle"></span>
+                            </a>
+                            <div class="dropdown-menu dropdownmenu-content mega-dropdown-menu">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="@Url.Content("~/Home/pha")">Process Hazard Analysis (PHA)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/hazopservice")"><i class="fa fa-angle-left"></i>HAZOP (Hazard and Operability) Study</a></li>
+                                                    <li><a href="@Url.Content("~/Home/hazid")"><i class="fa fa-angle-left"></i>HAZID (Hazard Identification) Study</a></li>
+                                                    <li><a href="@Url.Content("~/Home/whatifanalysis")"><i class="fa fa-angle-left"></i>What-If Analysis</a></li>
+                                                    <li><a href="@Url.Content("~/Home/hac")"><i class="fa fa-angle-left"></i>HAC</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="@Url.Content("~/Home/psm")">Process Safety Management (PSM)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/psmgapanalysis")"><i class="fa fa-angle-left"></i>PSM Gap analysis CUM Audit</a></li>
+                                                    <li><a href="@Url.Content("~/Home/psmtraining")"><i class="fa fa-angle-left"></i>PSM Training</a></li>
+                                                    <li><a href="@Url.Content("~/Home/psmimplementation")"><i class="fa fa-angle-left"></i>PSM Implementation Program</a></li>
+                                                </ul>
+                                            </div>
+                                            @* <div class="col-lg-12">
+                                            <ul>
+                                            <li><a class="dropdown-header" href="javascript:void(0);">Hygiene Services</a></li>
+                                            <li><a href="@Url.Content("~/Home/industrialhygienesurvey")"><i class="fa fa-angle-left"></i>Industrial Hygiene Survey</a></li>
+                                            <li><a href="@Url.Content("~/Home/chemicalexposure")"><i class="fa fa-angle-left"></i>Chemical Exposure</a></li>
+                                            <li><a href="@Url.Content("~/Home/noisemonitering")"><i class="fa fa-angle-left"></i>Noise Monitoring</a></li>
+                                            <li><a href="@Url.Content("~/Home/illumination")"><i class="fa fa-angle-left"></i>Illumination Survey</a></li>
+                                            <li><a href="@Url.Content("~/Home/ventilation")"><i class="fa fa-angle-left"></i>Ventilation Survey</a></li>
+                                            <li><a href="@Url.Content("~/Home/ergonomics")"><i class="fa fa-angle-left"></i>Ergonomics Survey</a></li>
+                                            </ul>
+                                            </div> *@
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="@Url.Content("~/Home/riskassesment")">Risk Assessment</a></li>
+                                                    <li><a href="@Url.Content("~/Home/hira")"><i class="fa fa-angle-left"></i>HIRA (Hazards Identification and Risk Assessment)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/qra")"><i class="fa fa-angle-left"></i>QRA (Quantitative Risk Assessment)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/jsa")"><i class="fa fa-angle-left"></i>JSA</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="@Url.Content("~/Home/firesafety")">Fire Safety Services</a></li>
+                                                    <li><a href="@Url.Content("~/Home/firaadeqacysurvey")"><i class="fa fa-angle-left"></i>Fire Adequacy Survey</a></li>
+                                                    <li><a href="@Url.Content("~/Home/firesafetyauditfire")"><i class="fa fa-angle-left"></i>Fire Safety Audit</a></li>
+                                                    <li><a href="@Url.Content("~/Home/firaloadcalculation")"><i class="fa fa-angle-left"></i>Fire Load Calculation</a></li>
+                                                    <li><a href="@Url.Content("~/Home/designofnetwork")"><i class="fa fa-angle-left"></i>Design of Fire Network</a></li>
+                                                </ul>
+                                            </div>
+                                            @* <div class="col-lg-12">
+                                            <ul>
+                                            <li><a class="dropdown-header" href="javascript:void(0);">Material Handling</a></li>
+                                            <li><a href="@Url.Content("~/Home/eotoperator")"><i class="fa fa-angle-left"></i>EOT Operator Training</a></li>
+                                            <li><a href="@Url.Content("~/Home/hydraoperator")"><i class="fa fa-angle-left"></i>Hydra Operator Training</a></li>
+                                            <li><a href="@Url.Content("~/Home/forkliftoperation")"><i class="fa fa-angle-left"></i>Forklift Operation Training</a></li>
+                                            <li><a href="@Url.Content("~/Home/riggingoperation")"><i class="fa fa-angle-left"></i>Rigging Operation</a></li>
+                                            </ul>
+                                            </div> *@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="@Url.Content("~/Home/safetyaudit")">Safety Audit</a></li>
+                                                    <li><a href="@Url.Content("~/Home/thirdpartysafetyaudit")"><i class="fa fa-angle-left"></i>Third Party Safety Audit (IS: 14489)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/processsafetyaudit")"><i class="fa fa-angle-left"></i>Process Safety Audit</a></li>
+                                                    <li><a href="@Url.Content("~/Home/electricalsafetyaudit")"><i class="fa fa-angle-left"></i>Electrical Safety Audit</a></li>
+                                                    <li><a href="@Url.Content("~/Home/firesafetyaudit")"><i class="fa fa-angle-left"></i>Fire Safety Audit</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="@Url.Content("~/Home/electricalsafety")">Electrical Safety Services</a></li>
+                                                    <li><a href="@Url.Content("~/Home/lightningarrestersyvey")"><i class="fa fa-angle-left"></i>Lightning Arrester Survey</a></li>
+                                                    <li><a href="@Url.Content("~/Home/lightningarresterinstallation")"><i class="fa fa-angle-left"></i>Lightning Arrester Installation</a></li>
+                                                    @* <li><a href="@Url.Content("~/Home/designofnetwork")"><i class="fa fa-angle-left"></i>Electrical Safety Audit</a></li> *@
+                                                    <li><a href="@Url.Content("~/Home/arcflashstudy")"><i class="fa fa-angle-left"></i>ARC Flash Study</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li><a class="dropdown-header" href="javascript:void(0);">Other Services</a></li>
+                                                    <li><a href="@Url.Content("~/Home/oep")"><i class="fa fa-angle-left"></i>OEP (On-Site Emergency Plan)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/safetyreport")"><i class="fa fa-angle-left"></i>Safety Report (68K)</a></li>
+                                                    <li><a href="@Url.Content("~/Home/erdmp")"><i class="fa fa-angle-left"></i>ERDMP (Emergency Response and Disaster Management Plan)</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @* <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("contactus", "Home")">
+                        Contact us
+                        </a>
+                        </li> *@
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Content("~/Home/customerref")">
+                                Customer Reference
+                            </a>
+                        </li>
+                        @* <li class="nav-item dropdown dmenu">
+                        <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                        Training <span class="dropdown-toggle"></span>
+                        </a>
+                        <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="@Url.Content("~/Home/EHSTraining")"><i class="fa fa-angle-left"></i>EHS Training</a>
+                        <a class="dropdown-item" href="@Url.Content("~/Home/AccreditationAndMethodology")"><i class="fa fa-angle-left"></i>Accreditation & Methodology</a>
+                        <a class="dropdown-item" href="@Url.Content("~/Home/trainingcalender")"><i class="fa fa-angle-left"></i>Training Calendar</a>
+                        </div>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" href="@Url.Content("~/Home/CustomerReference")">
+                        Customer Reference
+                        </a>
+                        </li>
+
+                        <li class="nav-item active dropdown dmenu hidden">
+
+                        <a class="nav-link" id="hiddenknwlogin" href="@Url.Content("~/Home/under_construction")">
+                        KNOWLEDGE BANK
+                        </a>
+                        </li> *@
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!--header end-->
+    <div class="sidebar-contact ">
+        <div class="toggle" onclick="ClearControlInquiry();">
+        </div>
+        <div class="toggle-bar text-center">
+            <p>Quick Inquiry</p>
+        </div>
+        <div class="scroll">
+            <form id="formvalidation">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" name="iname" id="txtname" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" class="form-control" name="emailid" id="txtemail" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="text" class="form-control" name="mobile" id="txtmobile" maxlength="10" onKeyPress="return onKeyValidate(event,numeric);" placeholder="Mobile">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-vector-square"></i>
+                    <input type="text" class="form-control" name="intrest" id="txtintrest" placeholder="Area Of Intrest">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-building"></i>
+                    <input type="text" class="form-control" name="comname" id="txtcname" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <span><i class="fas fa-comment"></i></span>
+                    <textarea placeholder="Your Message" name="msg" id="txtmsg" class="form-control"></textarea>
+                </div>
+                <input type="submit" class="btn" name="" onclick="AddInquiry();" value="SEND">
+            </form>
+        </div>
+    </div>
+    <div class="">
+        @RenderBody()
+    </div>
+
+    <div class="foots">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="foots-1">
+                        <h5>Quick Access</h5>
+                        <ul>
+                            <li><a href="@Url.Content("~/Home/aboutus")"><i class="fas fa-angle-right mr-2"></i>About Us</a></li>
+                            <li><a href="@Url.Content("~/Home/certification")"><i class="fas fa-angle-right mr-2"></i>Certifications & Accreditations</a></li>
+                            <li><a href="@Url.Content("~/Home/patrons")"><i class="fas fa-angle-right mr-2"></i>Partners & Clients</a></li>
+                            <li><a href="@Url.Content("~/Home/testimonials")"><i class="fas fa-angle-right mr-2"></i>Hear from Our Clients</a></li>
+                            <li><a href="@Url.Content("~/Home/customerref")"><i class="fas fa-angle-right mr-2"></i>Customer Reference</a></li>
+                            <li><a href="@Url.Content("~/Home/contactus")"><i class="fas fa-angle-right mr-2"></i>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="foots-3">
+                        <h5>Registered Office</h5>
+                        <ul>
+                            <li class="d-flex">
+                                <div class="contact-icon mr-2">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                </div>
+                                <div class="contact-desc">
+                                    <p translate="no">
+                                        JOGI SAFETECH PVT. LTD.<br />
+                                        A-701/702, Shriji Arcade,
+                                        Behind Bhulka Bhavan School,
+                                        Anand Mahal Road, Adajan,
+                                        Surat, Gujarat - 395009
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <div class="contact-icon mr-2 mr-2">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                </div>
+                                <div class="contact-desc">
+                                    <p translate="no">audit@jogisafetech.com</p>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <div class="contact-icon mr-2">
+                                    <i class="fas fa-phone-alt mr-2"></i>
+                                </div>
+                                <div class="contact-desc">
+                                    <p translate="no">+91 70488 40302</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="foots-4">
+                        <h5>Our Company</h5>
+                        @* <a href="https://www.youtube.com/embed/kgCoXAGVJKQ?vq=hd720" class="html5lightbox" title="Big Buck Bunny Copyright Blender Foundation">
+                        <iframe width="560" height="200" src="https://www.youtube.com/embed/kgCoXAGVJKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </a> *@
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/kgCoXAGVJKQ?si=2sPTh_pkGcDi71f5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subfooter">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="sub-left">
+                        <p translate="no">Jogi Safetech PVT. LTD &copy; <span id="footerDate"></span>. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="sub-right">
+                        <p><a href="~/jogisafetechbrochure.pdf" target="_blank">Our Prospectus<i class="far fa-file-alt"></i></a> |&nbsp; Crafted by <i class="fas fa-heart"></i> <a href="https://www.mitsolutions.in/" target="_blank" translate="no">M iT Solutions</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:" id="return-to-top"><i class="fas fa-angle-up"></i></a>
+
+    <div class="mySocialMedia" data-toggle="tooltip" data-placement="left" title="Social Media">
+        <div class="navigation">
+            <div class="menuToggle"><i class="fas fa-link" style="color: #2f5185;"></i></div>
+            <div class="menu">
+                <ul>
+                    <li style="--i:0.1s">
+                        <a href="https://www.facebook.com/JOGISafeTechPvtLtd/" target="_blank">
+                            <i title="Facebook" class="fab fa-facebook-f" style="color: #0866ff;"></i>
+                        </a>
+                    </li>
+                    <li style="--i:0.2s">
+                        <a href="https://www.linkedin.com/company/jogisafetechpvtltd/" target="_blank">
+                            <i title="LinkedIn" class="fab fa-linkedin-in" style="color: #0a66c2"></i>
+                        </a>
+                    </li>
+                    <li style="--i:0.3s">
+                        <a href="https://www.youtube.com/channel/UCzoA-R7OGOw1fNx03v2vTfA" target="_blank">
+                            <i title="YouTube" class="fab fa-youtube" style="color: #ff0033;"></i>
+                        </a>
+                    </li>
+                    <li style="--i:0.3s">
+                        <a href="http://search.google.com/local/writereview?placeid=ChIJSerqHyVM4DsRqVcOLuHogbA" target="_blank">
+                            <i title="Google Review" class="fab fa-google" style="color: #F4B400;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="MyLoader" id="lodeerloder">
+        <div class="loader3">
+            <img src="~/images/jogilogo.png" alt="Jogi Safetech PVT Ltd logo" class="img-fluid" width="123" height="70">
+        </div>
+    </div>
+
+    <script src="~/js/jquery3.5.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/fontawesome.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/glightbox.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    @* <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> *@
+
+    <script>
+        $(document).ready(function () {
+            //Loader
+            $(window).on('load', function () {
+                $('#lodeerloder').addClass('hidden');
+            });
+            setTimeout(function () {
+                $('#lodeerloder').addClass('hidden');
+            }, 3000);
+
+            //Toggle Social media
+            let menuToggle = document.querySelector('.menuToggle');
+            menuToggle.onclick = function () {
+                menuToggle.classList.toggle('active');
+            }
+
+            //Sticky Navbar
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('.navbar-main').addClass('fixed');
+                } else {
+                    $('.navbar-main').removeClass('fixed');
+                }
+            });
+
+            //1st Top Bar
+            let lastScrollY = window.scrollY;
+            const navbar = document.querySelector('.header-top_area');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY) {
+                    // Scroll down - hide navbar
+                    navbar.style.display = 'none';
+                } else {
+                    // Scroll up - show navbar
+                    navbar.style.display = 'block';
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            //Pagination Table
+            $('#clientTable').DataTable({
+                pageLength: 10
+            });
+
+            var maxHeight = 0;
+
+            // Find the tallest .box element
+            $('.new-home-about').each(function () {
+                var thisHeight = $(this).outerHeight();
+                if (thisHeight > maxHeight) {
+                    maxHeight = thisHeight;
+                }
+            });
+
+            // Set all .new-home-about elements to the tallest height
+            $('.new-home-about').height(maxHeight);
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Testimonial Same Height
+            function setSameHeight() {
+                let maxHeight = 0;
+
+                // Reset height to auto for recalculation
+                $('.testimonial-page').css('height', 'auto');
+
+                // Calculate max height
+                $('.testimonial-page').each(function () {
+                    const currentHeight = $(this).outerHeight(); // Use outerHeight for better accuracy with padding/margins
+                    if (currentHeight > maxHeight) {
+                        maxHeight = currentHeight;
+                    }
+                });
+
+                // Apply the max height
+                $('.testimonial-page').css('height', maxHeight + 'px');
+            }
+
+            // Run on page load
+            setSameHeight();
+
+            // Recalculate on window resize
+            $(window).on('resize', function () {
+                setSameHeight();
+            });
+        });
+    </script>
+
+
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        //Same Height jQuery
+        function setEqualHeight3() {
+            var maxHeight = 0;
+
+            // Reset the height first to handle resizing
+            $('.customer-inner').css('height', 'auto');
+
+            // Loop through each div to find the maximum height
+            $('.customer-inner').each(function () {
+                var thisHeight = $(this).outerHeight();
+                if (thisHeight > maxHeight) {
+                    maxHeight = thisHeight;
+                }
+            });
+
+            // Set each div to the maximum height
+            $('.customer-inner').css('height', maxHeight + 'px');
+        }
+
+        // Initial call to set heights
+        setEqualHeight3();
+
+        // Optional: Adjust heights on window resize for responsiveness
+        $(window).resize(function () {
+            setEqualHeight3();
+        });
+    </script>
+
+    <script>
+        //About us section
+        $('#new-home-about').owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            center: true,
+            loop: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 1
+                },
+                768: {
+                    items: 1
+                },
+                991: {
+                    items: 1
+                }
+            }
+        });
+
+        //Certificate section
+        $('#certificate').owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            center: true,
+            loop: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 3
+                },
+                768: {
+                    items: 4
+                },
+                991: {
+                    items: 5
+                }
+            }
+        });
+
+        //PERFORMANCE Counting
+        $('.counting').each(function () {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+            $({ countNum: $this.text() }).animate({
+                countNum: countTo
+            },
+                {
+                    duration: 10000,
+                    easing: 'linear',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                    }
+
+                });
+        });
+
+        $('#patronslist').owlCarousel({
+            loop: true,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                767: {
+                    items: 4
+                },
+                991: {
+                    items: 5
+                }
+            }
+        })
+
+        //Testimonial Section
+        $('#testimoniallist').owlCarousel({
+            autoplay: true,
+            margin: 10,
+            autoplayTimeout: 2500,
+            autoplayHoverPause: true,
+            center: false,
+            loop: true,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 1
+                },
+                768: {
+                    items: 1
+                },
+                991: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1600: {
+                    items: 2
+                }
+
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true
+            });
+        });
+    </script>
+    <script>
+        //===== Scroll to Top ====
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 50) {
+                $('#return-to-top').fadeIn(200);
+            } else {
+                $('#return-to-top').fadeOut(200);
+            }
+        });
+
+        $('#return-to-top').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+        });
+        //side-toggle
+        $('.toggle').click(function () {
+            $('.sidebar-contact').toggleClass('active')
+            $('.toggle.active').removeClass('not-active')
+            $('.toggle').toggleClass('active')
+            $('.sidebar-contact.active').removeClass('not-active')
+            $('.hide').slideUp("slow")
+        })
+
+        //Slick Slider
+        $(".Modern-Slider").slick({
+            autoplay: true,
+            autoplaySpeed: 10000,
+            speed: 600,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            pauseOnHover: false,
+            dots: true,
+            pauseOnDotsHover: true,
+            cssEase: 'linear',
+            //fade:true,
+            draggable: true,
+            prevArrow: '<button class="PrevArrow"><i class="fas fa-chevron-left"></i></button>',
+            nextArrow: '<button class="NextArrow"><i class="fas fa-chevron-right"></i></button>',
+        });
+    </script>
+    <script>
+        var d = new Date();
+        var n = d.getFullYear();
+        document.getElementById("footerDate").innerHTML = n;
+    </script>
+
+    <script>
+        //Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: "en", includedLanguages: "en,ar,es", autoDisplay: false }, "google_translate_element");
+
+            var $googleDiv = $("#google_translate_element .skiptranslate");
+            var $googleDivChild = $("#google_translate_element .skiptranslate div");
+            $googleDivChild.next().remove();
+
+            $googleDiv.contents().filter(function () {
+                return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
+            }).remove();
+        }
+    </script>
+    <script src="~/js/translate.js"></script>
+    @* @RenderSection("snippets", required: false) *@
+</body>
+</html>

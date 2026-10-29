@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\CustomerReference.cshtml" />
+    <Content Remove="Views\Home\firesafetyaudit11.cshtml" />
+    <Content Remove="wwwroot\css\Home\fancybox.css" />
+    <Content Remove="wwwroot\css\Home\fullcalendar.min.css" />
+    <Content Remove="wwwroot\css\Home\fullcalendar.print.min.css" />
+    <Content Remove="wwwroot\css\Home\lightbox.css" />
+    <Content Remove="wwwroot\js\aos.js" />
+    <Content Remove="wwwroot\js\extra.js" />
+    <Content Remove="wwwroot\js\fullcalendar.min.js" />
+    <Content Remove="wwwroot\js\html5lightbox.js" />
+    <Content Remove="wwwroot\js\jquery.richtext.js" />
+    <Content Remove="wwwroot\js\kendo.timezones.min.js" />
+    <Content Remove="wwwroot\js\lightbox.js" />
+    <Content Remove="wwwroot\js\main.js" />
+    <Content Remove="wwwroot\js\moment.min.js" />
+    <Content Remove="wwwroot\js\perfect-scrollbar.js" />
+    <Content Remove="wwwroot\js\richtext.min.css" />
+    <Content Remove="wwwroot\js\scripts.bundle.min.js" />
+    <Content Remove="wwwroot\js\wow.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\firesafety.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\testimonials.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\hazid.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\hazopservice.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\patrons.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\industrialhygienesurvey.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\hira.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
